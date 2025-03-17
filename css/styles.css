@@ -1,0 +1,270 @@
+/* Root Variables */
+:root {
+    /* Primary Color: */
+    --Dark-Blue: #003d99;
+
+    /* Accent Colors: */
+    --Orange: #FF6B00;
+    /*(for buttons and call-to-action elements)*/
+
+    --Dark-Gray: #4d4d4d;
+    /*(for text and secondary elements)*/
+
+    --Light-Gray: #f2f2f2;
+    --White: #fff;
+    /*(for backgrounds and borders)*/
+
+    /* Secondary-Color: */
+    --Sky-Blue: #0099cc;
+    /*(for hover states and secondary buttons)*/
+
+    /* Font Weights:  */
+    --Regular: 400;
+    --Medium: 500;
+    --Bold: 700;
+
+    /* Headings: */
+    --H1: 30px;
+    --H2: 24px;
+    --H3: 18px;
+    --Body-Text: 16px;
+    --Small-Text: 12px;
+}
+
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: var(--Body-Text);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: var(--Regular);
+    font-style: normal;
+    background-color: var(--Light-Gray);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header for all pages */
+header {
+    overflow-x: hidden;
+    width: 100% !important;
+    padding: var(--Body-Text) var(--H1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header .logo img {
+    height: var(--H1);
+}
+
+.main-nav button {
+    background-color: transparent;
+    border: 0;
+    color: var(--Dark-Gray);
+    transition: ease 0.5s;
+    margin: 0 var(--Small-Text);
+
+    &:hover {
+        cursor: pointer;
+        color: var(--Dark-Blue);
+    }
+
+    &:active {
+        color: var(--Sky-Blue);
+    }
+}
+
+#login-button {
+    border: 1px solid var(--Sky-Blue);
+    color: var(--Sky-Blue);
+    border-radius: var(--H1);
+    padding: var(--Small-Text);
+    transition: ease 0.25s;
+
+    &:hover {
+        color: var(--Dark-Blue);
+        border: 1px solid var(--Dark-Blue);
+    }
+}
+
+@media (max-width:790px) {
+    
+}
+
+/* index.html */
+.secondary-nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.secondary-nav button {
+    background-color: var(--Dark-Blue);
+    color: var(--Light-Gray);
+    border: 1.5px solid var(--Light-Gray);
+    padding: var(--Small-Text) var(--Body-Text);
+    border-radius: var(--H1);
+    margin: 0 var(--Small-Text);
+    transition: ease 0.5s;
+
+    &:hover {
+        cursor: pointer;
+        color: var(--Orange);
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+}
+
+.main-index {
+    background-color: var(--White);
+    padding: 24px;
+    border-radius: var(--Body-Text);
+    width: 100%;
+    max-width: 768px;
+    margin: 24px auto;
+}
+
+.main-index .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.main-index .header div {
+    font-size: var(--Body-Text);
+    font-weight: var(--Bold);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.main-index .header .active {
+    color: var(--Dark-Blue);
+    border-bottom: 2px solid var(--Orange);
+    padding-bottom: 4px;
+}
+
+.main-index .header div:not(.active) {
+    color: var(--Dark-Gray);
+}
+
+.main-index .input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--Light-Gray);
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.main-index .input-group i {
+    color: var(--Dark-Blue);
+    margin-right: 8px;
+}
+
+.main-index .input-group input,
+.main-index .input-group select {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: var(--Body-Text);
+}
+
+.main-index .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.main-index .checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-size: var(--Body-Text);
+}
+
+.main-index .checkbox-group input {
+    margin-right: 8px;
+}
+
+.main-index .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-index .button-group button {
+    background-color: var(--Dark-Blue);
+    color: var(--White);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: var(--Body-Text);
+    cursor: pointer;
+}
+
+.main-index .search-button {
+    background-color: var(--Orange);
+    color: var(--White);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: var(--Body-Text);
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footer for all pages */
+footer {
+    width: 100%;
+    margin-top: var(--H1);
+    background-color: var(--Dark-Blue);
+    padding: var(--Medium);
+    color: var(--Orange);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--Body-Text) var(--H1);
+    gap: var(--Medium);
+    justify-content: space-between;
+}
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--Small-Text);
+    width: 150px;
+    margin: var(--Small-Text);
+}
+
+.footer-links button {
+    background: none;
+    color: var(--Light-Gray);
+    border: none;
+    font-size: var(--Body-Text);
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--Orange);
+    }
+}
