@@ -5,77 +5,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IRCTC - Rethought</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
   </head>
   <body>
-    <!-- navigation that comes in this specific page -->
-    <nav class="secondary-nav">
-      <a href="#"><button>Trains</button></a>
-      <a href="#"><button>Flights</button></a>
-      <a href="#"><button>Buses</button></a>
-      <a href="#"><button>Holidays</button></a>
-      <a href="#"><button>Meals</button></a>
-      <a href="#"><button>Hotels</button></a>
-      <a href="#"><button>Loyalty</button></a>
-      <a href="#"><button>Promotions</button></a>
-    </nav>
-
-    <!-- landing page hero -->
+    <!-- landing page -->
     <div class="main-index">
-      <div class="header">
-        <div class="active">BOOK TICKET</div>
-        <div>PNR STATUS</div>
-        <div>CHARTS / VACANCY</div>
+      <!-- navigation that comes in this specific page -->
+      <nav class="secondary-nav">
+        <a href="#"><button id="active">Trains</button></a>
+        <a href="#"><button>Flights</button></a>
+        <a href="#"><button>Buses</button></a>
+        <a href="#"><button>Holidays</button></a>
+        <a href="#"><button>Meals</button></a>
+        <a href="#"><button>Hotels</button></a>
+        <a href="#"><button>Loyalty</button></a>
+        <a href="#"><button>Promotions</button></a>
+      </nav>
+      <div class="card">
+        <div class="header">
+          <li><a href="#" id="active">Book Ticket</a></li>
+          <li><a href="#">PNR Status</a></li>
+          <li><a href="#">Contact</a></li>
+        </div>
+        <div class="hero-image">
+          <img src="assets/index-bg.png" alt="" />
+        </div>
+        <div id="book-form">
+          <div class="input-group">
+            <img
+              src="https://cdn.jsdelivr.net/gh/corover/assets@latest/askdisha-bucket/station-icon.png"
+              alt="Source Icon"
+            />
+            <div>
+              <span class="label">From</span>
+              <input type="text" placeholder="Select Your Source Station" />
+            </div>
+          </div>
+
+          <div class="swap-btn">
+            <img
+              src="https://cdn.jsdelivr.net/gh/corover/assets@latest/askdisha-bucket/arrows-refactored.png"
+              alt="Swap Icon"
+            />
+          </div>
+
+          <div class="input-group">
+            <img
+              src="https://cdn.jsdelivr.net/gh/corover/assets@latest/askdisha-bucket/station-icon.png"
+              alt="Destination Icon"
+            />
+            <div>
+              <span class="label">To</span>
+              <input
+                type="text"
+                placeholder="Select Your Destination Station"
+              />
+            </div>
+          </div>
+
+          <div class="date-quota-group">
+            <div class="input-group">
+              <div>
+                <span class="label">Journey Date</span>
+                <input type="date" name="" id="" />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div>
+                <span class="label"> Quota</span>
+                <select name="" id="">
+                  <option value="#">General</option>
+                  <option value="#">General</option>
+                  <option value="#">General</option>
+                  <option value="#">General</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="book-btn"
+          onclick="document.location='pages/train-list.html'"
+        >
+          Find Trains
+        </button>
       </div>
-      <div class="input-group">
-        <i class="fas fa-map-marker-alt"></i>
-        <input type="text" value="NEW DELHI - NDLS" placeholder="from" />
+
+      <div class="container">
+        <h2 class="title">Our other popular services</h2>
+        <div class="services-flex">
+          <!-- Flights -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img src="assets/services images/Flight.png" alt="Flights" />
+            </div>
+            <p>Flights</p>
+          </div>
+
+          <!-- Hotels -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img src="assets/services images/Hotel.png" alt="Hotels" />
+            </div>
+            <p>Hotels</p>
+          </div>
+
+          <!-- Rail Drishti -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img
+                src="assets/services images/Rail Drishti.png"
+                alt="Rail Drishti"
+              />
+            </div>
+            <p>Rail Drishti</p>
+          </div>
+
+          <!-- E-catering -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img src="assets/services images/Catering.png" alt="E-catering" />
+            </div>
+            <p>eCatering</p>
+          </div>
+
+          <!-- Bus -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img src="assets/services images/Bus.png" alt="Bus" />
+            </div>
+            <p>Bus</p>
+          </div>
+
+          <!-- Tourist Train -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img src="assets/services images/Train.png" alt="Tourist Train" />
+            </div>
+            <p>Tourist Train</p>
+          </div>
+
+          <!-- Hill Railways -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img
+                src="assets/services images/Hill Railways.png"
+                alt="Hill Railways"
+              />
+            </div>
+            <p>Hill Railways</p>
+          </div>
+          <!-- Holiday Packs -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img src="assets/services images/Hotel.png" alt="Holiday Packs" />
+            </div>
+            <p>Holiday Packs</p>
+          </div>
+
+          <!-- Charter Train -->
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <img src="assets/services images/Train.png" alt="Charter Train" />
+            </div>
+            <p>Charter Train</p>
+          </div>
+        </div>
       </div>
-      <div class="input-group">
-        <i class="fas fa-map-marker-alt"></i>
-        <input type="text" value="BHUBANESWAR - BBS" />
-        <i class="fas fa-exchange-alt" style="margin-left: 8px"></i>
+      <center>
+        <h3 class="title">Plan your next holiday</h3>
+      </center>
+      <div class="carousel">
+        <div class="card">
+          <img src="assets/plans/Maharajas.png" alt="Maharajas' Express" />
+          <div class="card-content">
+            <h3>Maharajas' Express</h3>
+            <p>
+              Redefining Royalty, Luxury and Comfort, Maharajas' express
+              takes...
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/plans/Intl.png" alt="International Packages" />
+          <div class="card-content">
+            <h3>Intl. Packages</h3>
+            <p>
+              Best deals in International Holiday packages, handpicked by
+              IRCTC...
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/plans/Domestic.png" alt="Domestic Air Packages" />
+          <div class="card-content">
+            <h3>Domestic Packages</h3>
+            <p>
+              Be it the spiritual devotee seeking blessings of Tirupati, Shirdi
+              or Mata...
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="input-group">
-        <i class="fas fa-calendar-alt"></i>
-        <input type="text" value="06/03/2024" />
-      </div>
-      <div class="input-group">
-        <i class="fas fa-briefcase"></i>
-        <select>
-          <option>All Classes</option>
-        </select>
-      </div>
-      <div class="input-group">
-        <select>
-          <option>General</option>
-        </select>
-      </div>
-      <div class="checkbox-group">
-        <label>
-          <input type="checkbox" />
-          Person With Disability Concession
-        </label>
-        <label>
-          <input type="checkbox" />
-          Flexible With Date
-        </label>
-        <label>
-          <input type="checkbox" />
-          Railway Pass Concession
-        </label>
-        <label>
-          <input type="checkbox" />
-          Train With Available Berth
-        </label>
-      </div>
-      <div class="button-group">
-        <button>Book With Disha 2.0</button>
-      </div>
-      <button class="search-button">Search Train</button>
     </div>
     <script src="js/setup.js"></script>
   </body>

@@ -3,10 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trains || IRCTC - Rethought</title>
+    <title>Select Train</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <script src="js/setup.js"></script>
+    <div class="main-trains">
+      <div class="container">
+        <!-- Header -->
+        <div class="header">
+          <h1>Select Train</h1>
+          <div></div>
+        </div>
+
+        <!-- Station Info -->
+        <div class="station-info">
+          <div>
+            <h2>NEW DELHI</h2>
+            <p>NDLS</p>
+          </div>
+          <div>
+            <h2>BHUBANESWAR</h2>
+            <p style="text-align: right">BBS</p>
+          </div>
+        </div>
+
+        <!-- Date Selector -->
+        <div class="date-selector">
+          <p>< &MediumSpace; 05 Feb &MediumSpace; ></p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+          <select name="" id="drop">
+            <option value="#">Quota</option>
+            <option value="#">General</option>
+            <option value="#">General</option>
+            <option value="#">General</option>
+          </select>
+          <select name="" id="drop">
+            <option value="#">Sort</option>
+            <option value="#">Something</option>
+            <option value="#">Something</option>
+            <option value="#">Something</option>
+          </select>
+        </div>
+
+        <!-- Train List -->
+        <div class="train-list">
+          <!-- Train Item -->
+          <div class="train-item" id="selected">
+            <div class="details">
+              <h3>BBS TEJAS RAJ</h3>
+              <h1 style="color: var(--Orange); font-size: 30px">22812</h1>
+            </div>
+            <div class="details">
+              <div>
+                <p>17:00</p>
+                <p>NEW DELHI | Day 1</p>
+              </div>
+              <div>
+                <p>23h 15m</p>
+              </div>
+              <div>
+                <p style="text-align: right">16:15</p>
+                <p>BHUBANESWAR | Day 2</p>
+              </div>
+            </div>
+            <div class="seats">
+              <div class="seat-card" id="selected">
+                <p>AC 3 TIER (3A)</p>
+                <p class="text-green">Available</p>
+                <p>34 Seats</p>
+              </div>
+              <div class="seat-card">
+                <p>AC 2 TIER (2A)</p>
+                <p class="text-green">Available</p>
+                <p>09 Seats</p>
+              </div>
+              <div class="seat-card">
+                <p>AC 1 TIER (1A)</p>
+                <p class="text-red">Waiting</p>
+                <p>18 Seats in WL</p>
+              </div>
+            </div>
+          </div>
+          <div class="train-item">
+            <div class="details">
+              <h3>NANDANKANAN EXP</h3>
+              <h1 style="color: var(--Orange); font-size: 30px">12816</h1>
+            </div>
+            <div class="details">
+              <div>
+                <p>07:30</p>
+                <p>NEW DELHI | Day 1</p>
+              </div>
+              <div>
+                <p>23h 15m</p>
+              </div>
+              <div>
+                <p style="text-align: right">11:40</p>
+                <p>BHUBANESWAR | Day 2</p>
+              </div>
+            </div>
+            <div class="seats">
+              <div class="seat-card">
+                <p>AC 3 TIER (3A)</p>
+                <p class="text-green">Available</p>
+                <p>2 Seats</p>
+              </div>
+              <div class="seat-card">
+                <p>AC 2 TIER (2A)</p>
+                <p class="text-red">Waiting</p>
+                <p>10 Seats</p>
+              </div>
+              <div class="seat-card">
+                <p>AC 1 TIER (1A)</p>
+                <p class="text-red">Waiting</p>
+                <p>30 Seats in WL</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <div>
+            <p>BBS TEJAS RAJ (22812), 3A</p>
+            <p>₹1450.5</p>
+          </div>
+          <button>Proceed to book</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="/js/setup.js"></script>
   </body>
 </html>

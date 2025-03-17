@@ -9,11 +9,12 @@ body {
 }
 
 .main-login {
+    margin: 0 0 75px 0;
     min-width: 320px;
     width: 50%;
     height: 500px;
     background: var(--Dark-Blue);
-    border: 2.5px solid var(--Sky-Blue);
+    border: 2.5px solid var(--Dark -Blue);
     overflow: hidden;
     border-radius: 10px;
 }

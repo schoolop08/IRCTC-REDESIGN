@@ -7,9 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href=""><button>Amazon Daily Deals</button></a>
           <a href=""><button>Alerts</button></a>
           <a href=""><button>Contact Us</button></a>
-          <a href="pages/login.html"><button id="login-button">Login/Register</button></a>
           <a href=""><button>हिंदी</button></a>
+          <a href="pages/login.html"><button id="login-button">Login  /  Register</button></a>
         </nav>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </header>
     `;
 
@@ -56,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </a>
     </div>
   </div>
+  <hr/>
   <center>
   <p>Copyright Â© 2025 - www.irctc.co.in. All Rights Reserved</p>
   </center>
@@ -64,6 +70,24 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
   document.body.insertAdjacentHTML("beforeend", footerHTML);
+
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".main-nav");
+  const navLinks = document.querySelectorAll(".main-nav button");
+
+  hamburger.addEventListener("click", mobileMenu);
+  navLinks.forEach((n) => n.addEventListener("click", closeMenu));
+
+  function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
+
   const gsapScript = document.createElement("script");
   gsapScript.src =
     "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js";
