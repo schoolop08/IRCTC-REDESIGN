@@ -41,6 +41,12 @@
     margin: 0;
     padding: 0;
     font-size: var(--Body-Text);
+
+    &::selection {
+        background-color: var(--Orange);
+        backdrop-filter: blur(15px);
+        color: var(--White);
+    }
 }
 
 body,
@@ -88,7 +94,8 @@ header .logo img {
     }
 }
 
-#login-button {
+#login-button,
+button {
     background-color: var(--Orange);
     color: var(--White);
     border-radius: var(--H1);
@@ -534,19 +541,23 @@ header .logo img {
 
 /* Train List Page */
 .main-trains {
-    margin: 20px auto;
-    border-radius: 12px;
+    margin: 40px auto 0 auto;
     overflow: hidden;
+    width: 100%;
+}
+
+.main-trains .container {
+    width: 100%;
+    margin: 10px 0;
 }
 
 /* Header */
 .main-trains .header {
-    background-color: var(--Dark-Blue);
-    color: var(--Light-Gray);
+    color: var(--Orange);
     padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: var(--Dark-Blue);
+    width: 250px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .main-trains .header h1 {
@@ -561,14 +572,13 @@ header .logo img {
     width: 100%;
     justify-content: space-between;
     background-color: var(--Light-Gray);
-    padding: 16px;
-    border-bottom: 2px solid var(--Dark-Gray);
+    padding: 30px;
+    padding-bottom: 0;
 }
 
 .main-trains .station-info h2 {
     font-size: 20px;
     color: var(--Dark-Blue);
-    margin-bottom: 4px;
     font-weight: 600;
 }
 
@@ -583,67 +593,35 @@ header .logo img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px;
-    background-color: var(--Light-Gray);
-    gap: 16px;
-    border-bottom: 2px solid var(--Dark-Gray);
-}
-
-
-/* Filters */
-.main-trains .filters {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-}
-
-.main-trains .filters select {
-    width: 25%;
-    overflow: hidden;
-    display: block;
-    background-color: var(--Orange);
-    color: var(--White);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    color: var(--Orange);
 
     &:hover {
-        opacity: 0.8;
+        cursor: pointer;
     }
 }
 
 /* Train List */
 .main-trains .train-list {
-    padding: 16px;
-    background-color: var(--Light-Gray);
+    padding: 30px;
 }
 
-.main-trains .train-item {
+.main-trains .train-item,
+.main-booking .card {
     background-color: var(--White);
     padding: 16px;
     border-radius: 12px;
     margin-bottom: 12px;
     transition: transform 0.2s ease;
 
-    &#selected {
-        border: 2.5px dashed var(--Dark-Blue);
+    &:hover {
+        transform: translateY(-8px);
     }
-}
-
-.main-trains .train-item:hover {
-    transform: translateY(-4px);
 }
 
 .train-item h3 {
     font-size: 18px;
-    font-weight: 600;
-    color: var(--Dark-Blue);
-    margin-bottom: 8px;
+    font-weight: var(--Bold);
+    border-bottom: 2px solid var(--Dark-Blue);
 }
 
 .main-trains .details {
@@ -657,6 +635,8 @@ header .logo img {
 .main-trains .seats {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 16px;
     gap: 20px;
 }
@@ -674,7 +654,8 @@ header .logo img {
     }
 
     &#selected {
-        border: 2.5px dashed var(--Orange);
+        background-color: var(--Dark-Blue);
+        color: var(--White);
     }
 }
 
@@ -683,26 +664,13 @@ header .logo img {
 }
 
 .main-trains .text-red {
-    color: #e11d48;
+    color: #ff0000;
     font-weight: 500;
 }
 
 .main-trains .text-green {
-    color: #10b981;
+    color: #1eb910;
     font-weight: 500;
-}
-
-.main-trains .text-blue {
-    color: var(--Sky-Blue);
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    transition: color 0.2s ease;
-}
-
-.main-trains .text-blue:hover {
-    color: var(--Dark-Blue);
 }
 
 .main-trains .footer {
@@ -721,20 +689,200 @@ header .logo img {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-}
+    transition: 0.5s ease;
 
-.main-trains .footer button:hover {
-    background-color: #e68a00;
-}
-
-@media (min-width: 768px) {
-    .main-trains {
-        max-width: 800px;
+    &:hover {
+        opacity: 0.9;
     }
 }
 
+/* Sidebar of Train List */
+.main-trains {
+    display: flex;
+    gap: 20px;
+}
 
+.main-trains .sidebar {
+    width: 250px;
+    background-color: var(--Sky-Blue);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    position: fixed;
+    top: 125px;
+    left: -280px;
+    z-index: 10;
+}
+
+.main-trains .sidebar.open {
+    transform: translateX(290px);
+}
+
+.main-trains .toggle-btn {
+    background-color: var(--Sky-Blue);
+    color: var(--Light-Gray);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    z-index: 20;
+    transition: ease 0.2s;
+
+    &:hover {
+        background-color: #0077aa;
+    }
+}
+
+.main-trains h2 {
+    font-size: 18px;
+    color: var(--White);
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--Dark-Blue);
+    padding-bottom: 6px;
+}
+
+.main-trains label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--Light-Gray);
+    cursor: pointer;
+}
+
+.main-trains input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.main-trains .sidebar select {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--Dark-Blue);
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--White);
+    background-color: var(--Dark-Blue);
+
+    &:focus-visible {
+        border: 2.5px solid var(--Dark-Blue);
+    }
+}
+
+.main-trains .apply-btn {
+    background-color: var(--Orange);
+    color: var(--White);
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: ease 0.2s;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* Main Booking Page */
+.main-booking .wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-booking .card {
+    width: 90%;
+    border: 1px solid var(--Dark-Gray);
+}
+
+.main-booking .card div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-booking .card h2,
+.main-booking .card h3 {
+    font-weight: 600;
+    color: var(--Orange);
+}
+
+.main-booking .card .change {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.main-booking .card select {
+    border: 0;
+    margin-bottom: 15px;
+    color: var(--Dark-Blue);
+    width: 150px;
+    padding-right: 15px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.main-booking .inputs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-booking input {
+    background-color: transparent;
+    border: 0;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--Orange);
+}
+
+.main-booking .card .radios div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.main-booking .card .title button {
+    padding: 10px 25px;
+    border: 0;
+}
+
+@media (max-width: 480px) {
+    .main-booking .card div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .main-booking .card .radios {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main-booking .card .radios div {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        flex-direction: row;
+    }
+
+    .main-booking .card .inputs input,
+    .main-booking .card .inputs select {
+        width: 100%;
+    }
+}
 
 /* Footer for all pages */
 footer {

@@ -1,15 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Your Train || IRCTC - Rethought</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      :root {
+        --Rajdhani: #ff8a98;
+        --Normal: #9289ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-booking">
+      <div class="wrap">
+        <div class="card">
+          <div class="title" style="color: var(--Normal)">
+            <h2>NANDANKANAN EXP</h2>
+            <h2>12816</h2>
+            <h2>23h 15m</h2>
+          </div>
+          <div class="details">
+            <h2>AC 3 TIER (3A) | General</h2>
+            <h2>Runs On: M W F</h2>
+          </div>
+          <div class="change">
+            <label for="board">Boarding Station</label>
+            <select name="daychange" id="">
+              <option value="Day1">New Delhi</option>
+              <option value="Day2">Aligarh</option>
+              <option value="Day3">Pune</option>
+            </select>
+          </div>
+          <div class="note">
+            <p style="font-size: var(--Small-Text)">
+              Please check NTES website or NTES app for actual time before
+              boarding
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="one-liner">
+            <h2>Avail Loyalty Benefits</h2>
+            <div class="radios" style="display: flex; gap: 12px">
+              <div>
+                <input type="radio" name="loalty" /><label for="loyalty"
+                  >Accrual</label
+                >
+              </div>
+              <div>
+                <input type="radio" name="loalty" /><label for="loyalty"
+                  >Redemption</label
+                >
+              </div>
+              <div>
+                <input type="radio" name="loalty" /><label for="loyalty"
+                  >Skip</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="title">
+            <h2>Passenger Details</h2>
+          </div>
+          <div class="inputs">
+            <input type="text" name="passanger" placeholder="Passanger Name" />
+            <input type="number" name="age" placeholder="Age" />
+            <select name="gender">
+              <option value="male">Male</option>
+              <option value="male">Female</option>
+              <option value="male">Others</option>
+            </select>
+            <select name="country">
+              <option value="indian">Indian</option>
+              <option value="non-indian">Non-Indian</option>
+            </select>
+            <select name="preferrence">
+              <option value="mid">Middle Berth</option>
+              <option value="low">Lower Berth</option>
+              <option value="up">Upper Berth</option>
+            </select>
+            <select name="catering">
+              <option value="veg">Veg</option>
+              <option value="non">Non - Veg</option>
+              <option value="no">No Food</option>
+            </select>
+          </div>
+          <h2 style="color: var(--Dark-Blue)">+ Add Passanger or Infant</h2>
+        </div>
+        <div class="card">
+          <div class="title">
+            <h2>₹1450 per person</h2>
+            <button>Go To Payment</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    
-    <script src="js/setup.js"></script>
-</body>
+    <script src="/js/setup.js"></script>
+  </body>
 </html>

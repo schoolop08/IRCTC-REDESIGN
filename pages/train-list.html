@@ -6,13 +6,55 @@
     <title>Select Train</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
+  <style>
+    :root {
+      --Rajdhani: #ff8a98;
+      --Normal: #9289ff;
+    }
+  </style>
   <body>
     <div class="main-trains">
+      <button class="toggle-btn" onclick="toggleSidebar()">☰ Filters</button>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Departure Time -->
+        <h2>Departure Time</h2>
+        <select id="departureTime">
+          <option value="">Anytime</option>
+          <option value="morning">Morning (6AM - 12PM)</option>
+          <option value="afternoon">Afternoon (12PM - 6PM)</option>
+          <option value="evening">Evening (6PM - 12AM)</option>
+          <option value="night">Night (12AM - 6AM)</option>
+        </select>
+
+        <!-- Train Type -->
+        <h2>Train Type</h2>
+        <label> <input type="checkbox" value="Express" /> Express </label>
+        <label> <input type="checkbox" value="Superfast" /> Superfast </label>
+        <label> <input type="checkbox" value="Shatabdi" /> Shatabdi </label>
+        <label> <input type="checkbox" value="Rajdhani" /> Rajdhani </label>
+
+        <!-- Class Type -->
+        <h2>Class Type</h2>
+        <label> <input type="checkbox" value="Sleeper" /> Sleeper </label>
+        <label> <input type="checkbox" value="AC" /> AC </label>
+        <label>
+          <input type="checkbox" value="First Class" /> First Class
+        </label>
+        <label>
+          <input type="checkbox" value="Second Class" /> Second Class
+        </label>
+
+        <!-- Apply Button -->
+        <button class="apply-btn" onclick="applyFilters()">
+          Apply Filters
+        </button>
+      </div>
       <div class="container">
         <!-- Header -->
         <div class="header">
           <h1>Select Train</h1>
-          <div></div>
         </div>
 
         <!-- Station Info -->
@@ -31,30 +73,46 @@
         <div class="date-selector">
           <p>< &MediumSpace; 05 Feb &MediumSpace; ></p>
         </div>
-
-        <!-- Filters -->
-        <div class="filters">
-          <select name="" id="drop">
-            <option value="#">Quota</option>
-            <option value="#">General</option>
-            <option value="#">General</option>
-            <option value="#">General</option>
-          </select>
-          <select name="" id="drop">
-            <option value="#">Sort</option>
-            <option value="#">Something</option>
-            <option value="#">Something</option>
-            <option value="#">Something</option>
-          </select>
+        <div
+          class="train-types"
+          style="
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <button
+            style="
+              background-color: var(--Normal);
+              color: var(--White);
+              padding: 10px 25px;
+              border-radius: 25px;
+              border: 0;
+            "
+          >
+            Normal trains
+          </button>
+          <button
+            style="
+              background-color: var(--Rajdhani);
+              color: var(--White);
+              padding: 10px 25px;
+              border-radius: 25px;
+              border: 0;
+            "
+          >
+            Rajdhani trains
+          </button>
         </div>
 
         <!-- Train List -->
         <div class="train-list">
           <!-- Train Item -->
-          <div class="train-item" id="selected">
-            <div class="details">
+          <div class="train-item" style="border: 5px solid var(--Rajdhani)">
+            <div class="details" style="color: var(--Rajdhani)">
               <h3>BBS TEJAS RAJ</h3>
-              <h1 style="color: var(--Orange); font-size: 30px">22812</h1>
+              <h1 style="font-size: 30px">22812</h1>
             </div>
             <div class="details">
               <div>
@@ -62,15 +120,15 @@
                 <p>NEW DELHI | Day 1</p>
               </div>
               <div>
-                <p>23h 15m</p>
+                <p style="color: var(--Sky-Blue); font-weight: 800">23h 15m</p>
               </div>
               <div>
                 <p style="text-align: right">16:15</p>
-                <p>BHUBANESWAR | Day 2</p>
+                <p style="text-align: right">BHUBANESWAR | Day 2</p>
               </div>
             </div>
             <div class="seats">
-              <div class="seat-card" id="selected">
+              <div class="seat-card">
                 <p>AC 3 TIER (3A)</p>
                 <p class="text-green">Available</p>
                 <p>34 Seats</p>
@@ -87,10 +145,10 @@
               </div>
             </div>
           </div>
-          <div class="train-item">
-            <div class="details">
+          <div class="train-item" style="border: 5px solid var(--Normal)">
+            <div class="details" style="color: var(--Normal)">
               <h3>NANDANKANAN EXP</h3>
-              <h1 style="color: var(--Orange); font-size: 30px">12816</h1>
+              <h1 style="font-size: 30px">12816</h1>
             </div>
             <div class="details">
               <div>
@@ -98,15 +156,15 @@
                 <p>NEW DELHI | Day 1</p>
               </div>
               <div>
-                <p>23h 15m</p>
+                <p style="color: var(--Sky-Blue); font-weight: 800">23h 15m</p>
               </div>
               <div>
                 <p style="text-align: right">11:40</p>
-                <p>BHUBANESWAR | Day 2</p>
+                <p style="text-align: right">BHUBANESWAR | Day 2</p>
               </div>
             </div>
             <div class="seats">
-              <div class="seat-card">
+              <div class="seat-card" id="selected">
                 <p>AC 3 TIER (3A)</p>
                 <p class="text-green">Available</p>
                 <p>2 Seats</p>
@@ -123,19 +181,63 @@
               </div>
             </div>
           </div>
+          <div class="train-item" style="border: 5px solid var(--Normal)">
+            <div class="details" style="color: var(--Normal)">
+              <h3>NEELANCHAL EXP</h3>
+              <h1 style="font-size: 30px">12822</h1>
+            </div>
+            <div class="details">
+              <div>
+                <p>17:00</p>
+                <p>NEW DELHI | Day 1</p>
+              </div>
+              <div>
+                <p style="color: var(--Sky-Blue); font-weight: 800">23h 15m</p>
+              </div>
+              <div>
+                <p style="text-align: right">16:15</p>
+                <p style="text-align: right">BHUBANESWAR | Day 2</p>
+              </div>
+            </div>
+            <div class="seats">
+              <div class="seat-card">
+                <p>AC 3 TIER (3A)</p>
+                <p class="text-green">Available</p>
+                <p>34 Seats</p>
+              </div>
+              <div class="seat-card">
+                <p>AC 2 TIER (2A)</p>
+                <p class="text-green">Available</p>
+                <p>09 Seats</p>
+              </div>
+              <div class="seat-card">
+                <p>AC 1 TIER (1A)</p>
+                <p class="text-red">Waiting</p>
+                <p>18 Seats in WL</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
           <div>
-            <p>BBS TEJAS RAJ (22812), 3A</p>
-            <p>₹1450.5</p>
+            <p style="font-weight: 600">NANDANKANAN EXP (12816), 3A</p>
+            <h1>
+              ₹1450.5
+              <span style="font-weight: 200">per person</span>
+            </h1>
           </div>
-          <button>Proceed to book</button>
+          <a href="booking.html"> <button>Proceed to book</button></a>
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="/js/setup.js"></script>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.toggle("open");
+      }
+    </script>
   </body>
 </html>
