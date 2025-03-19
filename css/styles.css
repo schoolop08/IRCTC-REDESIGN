@@ -203,7 +203,6 @@ header .logo img {
         position: fixed;
         top: 60px;
         width: 100%;
-        height: 100%;
         background-color: var(--Orange);
         color: var(--White);
         display: flex;
@@ -444,15 +443,18 @@ header .logo img {
         position: absolute;
     }
 
-    .main-index .card {
-        margin-top: 0;
-        padding-top: 0;
-    }
-
-    .main-index .card {
-        width: 100vw;
-        border: 0;
-        background-color: transparent;
+    .main-index .card,
+    .main-index .container,
+    .main-trains .container,
+    .main-booking .card,
+    .main-track-form .search_container,
+    .main-train-track .container,
+    .main-train-track .train-status-container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        width: 100vw !important;
+        border: 0 !important;
+        background-color: transparent !important;
     }
 
     .input-group {
@@ -1107,8 +1109,8 @@ header .logo img {
 /* Button styling */
 .main-train-track button {
     background-color: var(--Dark-Blue);
-    color: white;
-    cursor: not-allowed;
+    color: var(--White);
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 

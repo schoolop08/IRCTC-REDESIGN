@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
   <hr/>
   <center>
-  <p>Copyright Â© 2025 - www.irctc.co.in. All Rights Reserved</p>
+  <p>Designed with 💝 by <a href="https://opsahoo.netlify.app/" style="color: var(--White); text-decoration: none">Om Prakash  Sahoo</a></p>
   </center>
 </footer>
 
