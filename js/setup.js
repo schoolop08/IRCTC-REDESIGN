@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <header>
         <div class="logo"><a href="/index.html"><img src="/assets/logo.png" alt="IRCTC LOGO" /></a></div>
         <nav class="main-nav">
-          <a href=""><button>IRCTC Exclusive</button></a>
-          <a href=""><button>Amazon Daily Deals</button></a>
-          <a href=""><button>Alerts</button></a>
-          <a href=""><button>Contact Us</button></a>
-          <a href=""><button>हिंदी</button></a>
+          <a href="#"><button>IRCTC Exclusive</button></a>
+          <a href="#"><button>Amazon Daily Deals</button></a>
+          <a href="#"><button>Alerts</button></a>
+          <a href="#"><button>Contact Us</button></a>
+          <a href="#"><button>हिंदी</button></a>
           <a href="pages/login.html"><button id="login-button">Login  /  Register</button></a>
         </nav>
         <div class="hamburger">

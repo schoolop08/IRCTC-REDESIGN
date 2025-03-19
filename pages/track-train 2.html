@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Your Train || IRCTC - Rethought</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="main-train-track">
+      <div class="container">
+        <details style="transition: 0.25s ease; cursor: pointer">
+          <summary>Modify Info</summary>
+          <div class="select-wrapper">
+            <div class="select-box">
+              <label>Select Journey Station</label>
+              <select id="Stationcode">
+                <option value="Anand Vihar Terminal ANVT" selected>
+                  Anand Vihar Terminal
+                </option>
+                <option value="Aligarh Jn ALJN">Aligarh Jn</option>
+                <option value="Tundla Jn TDL">Tundla Jn</option>
+                <option value="Kanpur Ctrl CNB">Kanpur Ctrl</option>
+                <option value="Fatehpur FTP">Fatehpur</option>
+                <option value="Prayagraj Jn PRYJ">Prayagraj Jn</option>
+                <option value="Mirzapur MZP">Mirzapur</option>
+                <option value="Pt DD Upadhyaya Jn DDU">
+                  Pt DD Upadhyaya Jn
+                </option>
+                <option value="Sasaram Jn SSM">Sasaram Jn</option>
+                <option value="Dehri On Sone DOS">Dehri On Sone</option>
+                <option value="Gaya Jn GAYA">Gaya Jn</option>
+                <option value="Koderma Jn KQR">Koderma Jn</option>
+                <option value="Parasnath PNME">Parasnath</option>
+                <option value="NSCB Jn Gomoh GMO">NSCB Jn Gomoh</option>
+                <option value="Bhaga VAA">Bhaga</option>
+                <option value="Bhojudih Jn BJE">Bhojudih Jn</option>
+                <option value="Adra Jn ADRA">Adra Jn</option>
+                <option value="Bankura Jn BQA">Bankura Jn</option>
+                <option value="Medinipur MDN">Medinipur</option>
+                <option value="Hijli HIJ">Hijli</option>
+                <option value="Jaleswar JER">Jaleswar</option>
+                <option value="Baleshwar BLS">Baleshwar</option>
+                <option value="Bhadrak BHC">Bhadrak</option>
+                <option value="Jajpur Keonjhar Road JJKR">
+                  Jajpur Keonjhar Road
+                </option>
+                <option value="Cuttack Jn CTC">Cuttack Jn</option>
+                <option value="Bhubaneswar BBS">Bhubaneswar</option>
+                <option value="Khurda Road Jn KUR">Khurda Road Jn</option>
+                <option value="Puri PURI">Puri</option>
+              </select>
+            </div>
+
+            <div class="select-box">
+              <label>Select Journey Date</label>
+              <select id="selectdate">
+                <option data-day="3 days ago" value="16-Mar-2025">
+                  3 days ago - 16 Mar 2025
+                </option>
+                <option data-day="2 days ago" value="17-Mar-2025">
+                  2 days ago - 17 Mar 2025
+                </option>
+                <option data-day="yesterday" value="18-Mar-2025">
+                  Yesterday - 18 Mar 2025
+                </option>
+                <option data-day="today" selected value="19-Mar-2025">
+                  Today - 19 Mar 2025
+                </option>
+                <option data-day="tomorrow" value="20-Mar-2025">
+                  Tomorrow - 20 Mar 2025
+                </option>
+              </select>
+            </div>
+
+            <div class="submit-box" style="margin-top: 15px">
+              <button id="submitBtn" disabled>Submit</button>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="train-status-container">
+        <div class="train-update">
+          <div class="train-icon">
+            <img
+              src="/assets/services images/Train.png"
+              width="40"
+              height="40"
+              alt="train-icon"
+            />
+          </div>
+          <div class="train-update__wrap">
+            <div class="train-update__status">
+              Train departed from <span id="departed-stnCode">Bhadan</span>
+            </div>
+            <div class="train-update__time">
+              Last Updated: <span>19 Mar 2025 11:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="running-status">
+          <!-- Start of Stations -->
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon delay">Delay by 18 min</div>
+              <div class="station-name">Anand Vihar TRM</div>
+            </div>
+            <div class="station-info">
+              <span>Day 1</span><br />
+              <span>19-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>07:48</span>
+            </div>
+            <div class="station-time">
+              <span>07:50</span>
+            </div>
+          </div>
+
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon delay">Delay by 4 min</div>
+              <div class="station-name">Aligarh Jn</div>
+            </div>
+            <div class="station-info">
+              <span>Day 1</span><br />
+              <span>19-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>09:09</span>
+            </div>
+            <div class="station-time">
+              <span>09:11</span>
+            </div>
+          </div>
+
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon delay">Delay by 6 min</div>
+              <div class="station-name">Tundla Jn</div>
+            </div>
+            <div class="station-info">
+              <span>Day 1</span><br />
+              <span>19-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>10:02</span>
+            </div>
+            <div class="station-time">
+              <span>10:26</span>
+            </div>
+          </div>
+
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon on-time">Right Time</div>
+              <div class="station-name active">Bhadan</div>
+            </div>
+            <div class="station-info">
+              <span>Day 1</span><br />
+              <span>19-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>11:00</span>
+            </div>
+            <div class="station-time">
+              <span>11:00</span>
+            </div>
+          </div>
+
+          <!-- Additional stations -->
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon on-time">Right Time</div>
+              <div class="station-name">Kanpur Central</div>
+            </div>
+            <div class="station-info">
+              <span>Day 1</span><br />
+              <span>19-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>13:15</span>
+            </div>
+            <div class="station-time">
+              <span>13:20</span>
+            </div>
+          </div>
+
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon delay">Delay by 4 hr 33 min</div>
+              <div class="station-name">Dd Upadhyaya Jn</div>
+            </div>
+            <div class="station-info">
+              <span>Day 1</span><br />
+              <span>19-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>22:58</span>
+            </div>
+            <div class="station-time">
+              <span>23:08</span>
+            </div>
+          </div>
+
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon delay">Delay by 4 hr 46 min</div>
+              <div class="station-name">Parasnath</div>
+            </div>
+            <div class="station-info">
+              <span>Day 2</span><br />
+              <span>20-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>04:32</span>
+            </div>
+            <div class="station-time">
+              <span>04:34</span>
+            </div>
+          </div>
+
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon delay">Delay by 3 hr 56 min</div>
+              <div class="station-name">Cuttack</div>
+            </div>
+            <div class="station-info">
+              <span>Day 2</span><br />
+              <span>20-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>14:56</span>
+            </div>
+            <div class="station-time">
+              <span>15:01</span>
+            </div>
+          </div>
+
+          <div class="station-row">
+            <div class="station-grid">
+              <div class="status-icon delay">Delay by 4 hr 11 min</div>
+              <div class="station-name">Puri</div>
+            </div>
+            <div class="station-info">
+              <span>Day 2</span><br />
+              <span>20-Mar</span>
+            </div>
+            <div class="station-time">
+              <span>18:11</span>
+            </div>
+            <div class="station-time">
+              <span>--:--</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/setup.js"></script>
+  </body>
+</html>

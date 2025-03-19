@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Your Train || IRCTC - Rethought</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="main-track-form">
+      <div class="search_container">
+        <p class="search_type">Search by Train</p>
+        <div class="search_sec search_via_num">
+          <p class="title_label">Train Number/Name</p>
+          <div class="form-group">
+            <input
+              type="text"
+              name="train_number"
+              class="form-control trainpicker"
+              placeholder="Type Train No."
+              autocomplete="on"
+            />
+            <input
+              type="hidden"
+              name="utm_source"
+              value="lts_dweb_Check_status"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <a href="track-train 2.html"
+            ><button type="submit" class="btn find-train-btn">
+              Check Status
+            </button></a
+          >
+        </div>
+      </div>
+      <div class="or">
+        <p>or</p>
+        <hr />
+      </div>
+      <div class="search_container">
+        <p class="search_type">Search by Stations</p>
+        <div class="search_sec search_via_num">
+          <p class="title_label">Departure Station</p>
+          <div class="form-group">
+            <input
+              type="text"
+              name="train_number"
+              class="form-control trainpicker"
+              placeholder="Departure Station"
+              autocomplete="on"
+            />
+            <input
+              type="hidden"
+              name="utm_source"
+              value="lts_dweb_Check_status"
+            />
+          </div>
+        </div>
+        <div class="form-group"></div>
+        <p class="title_label">Arrival Station</p>
+        <div class="form-group">
+          <input
+            type="text"
+            name="train_number"
+            class="form-control trainpicker"
+            placeholder="Arrival Station"
+            autocomplete="on"
+          />
+          <input type="hidden" name="utm_source" />
+        </div>
+        <a href="track-train 2.html"
+          ><button type="submit" class="btn find-train-btn">
+            Check Status
+          </button></a
+        >
+      </div>
+    </div>
+    <script src="/js/setup.js"></script>
+  </body>
+</html>

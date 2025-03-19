@@ -18,7 +18,7 @@
     /*(for backgrounds and borders)*/
 
     /* Secondary-Color: */
-    --Sky-Blue: #0099cc;
+    --Sky-Blue: #4900b7;
     /*(for hover states and secondary buttons)*/
 
     /* Font Weights:  */
@@ -43,9 +43,7 @@
     font-size: var(--Body-Text);
 
     &::selection {
-        background-color: var(--Orange);
-        backdrop-filter: blur(15px);
-        color: var(--White);
+        background-color: #003d9955;
     }
 }
 
@@ -94,8 +92,7 @@ header .logo img {
     }
 }
 
-#login-button,
-button {
+#login-button {
     background-color: var(--Orange);
     color: var(--White);
     border-radius: var(--H1);
@@ -216,7 +213,7 @@ button {
 
     &:hover {
         cursor: pointer;
-        color: var(--Orange);
+        color: var(--Orange) !important;
     }
 
     &#active {
@@ -255,9 +252,13 @@ button {
 .main-index .card .header li a {
     text-decoration: none;
     color: var(--Dark-Blue);
+    background-color: var(--Light-Gray);
+    padding: 10px 25px;
+    border-radius: 10px 10px 0 0;
 
     &#active {
         color: var(--Orange);
+        background-color: var(--Dark-Blue);
     }
 }
 
@@ -265,7 +266,7 @@ button {
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-radius: var(--Body-Text) var(--Body-Text) 0 0;
+    /* border-radius: var(--Body-Text) var(--Body-Text) 0 0; */
     transition: 0.3s;
 }
 
@@ -299,10 +300,9 @@ button {
 }
 
 .label {
-
-    font-size: 12px;
+    font-size: var(--Body-Text);
     color: var(--Dark-Blue);
-    font-weight: 700;
+    font-weight: var(--Bold);
 }
 
 #book-form input,
@@ -362,10 +362,10 @@ button {
     border-radius: 8px;
     cursor: pointer;
     border: none;
-}
 
-.book-btn:hover {
-    background-color: var(--Dark-Blue);
+    &:hover {
+        background-color: var(--Dark-Blue);
+    }
 }
 
 @media (max-width:1015px) {
@@ -409,6 +409,10 @@ button {
         justify-content: center;
         rotate: 0deg;
         align-items: center;
+    }
+
+    .main-index .carousel .card {
+        filter: sepia(00);
     }
 }
 
@@ -503,7 +507,7 @@ button {
     min-width: 150px;
     max-width: 330px;
     height: 400px;
-    filter: brightness(0.5) sepia(1);
+    filter: brightness(0.75) sepia(0.5);
     transition: 0.75s ease;
 
     &:hover {
@@ -525,13 +529,14 @@ button {
     left: 0;
     width: 100%;
     padding: 20px;
-    background: var(--Orange);
-    color: var(--Light-Gray);
+    background: var(--White);
+    color: var(--Dark-Blue);
 }
 
 .carousel .card-content h3 {
     font-size: 24px;
     font-weight: 700;
+    color: var(--Orange);
 }
 
 .carousel .card-content p {
@@ -799,6 +804,7 @@ button {
 }
 
 .main-booking .card {
+    max-width: 1000px;
     width: 90%;
     border: 1px solid var(--Dark-Gray);
 }
@@ -822,7 +828,7 @@ button {
 
 .main-booking .card select {
     border: 0;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     color: var(--Dark-Blue);
     width: 150px;
     padding-right: 15px;
@@ -858,6 +864,11 @@ button {
 .main-booking .card .title button {
     padding: 10px 25px;
     border: 0;
+
+    &:hover {
+        cursor: pointer;
+        border: 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -884,6 +895,282 @@ button {
     }
 }
 
+/* Tracking Train Pages */
+
+.main-track-form {
+    background-color: var(--Light-Gray);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-track-form .search_container {
+    background-color: var(--White);
+    padding: 16px;
+    border: 1px solid var(--Dark-Gray);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.main-track-form .search_type {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--Dark-Blue);
+    margin-bottom: 10px;
+}
+
+.main-track-form .title_label {
+    font-size: 14px;
+    color: var(--Dark-Gray);
+    margin-bottom: 6px;
+}
+
+.main-track-form .form-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.main-track-form .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--Dark-Blue);
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    color: var(--Dark-Gray);
+
+    &:focus {
+        border-color: var(--Sky-Blue);
+    }
+}
+
+.main-track-form .btn {
+    background-color: var(--Orange);
+    color: var(--White);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+
+    &:hover {
+        opacity: 0.75;
+        border: none !important;
+
+        color: var(--White) !important;
+    }
+}
+
+.main-track-form .or hr {
+    margin: 0 0 25px 0;
+}
+
+.main-track-form .or p {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    padding: 5px;
+    background-color: var(--Light-Gray);
+    margin-top: -17.5px;
+}
+
+.main-train-track .container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--White);
+    border: 2px solid var(--Dark-Gray);
+    border-radius: 8px;
+}
+
+/* Flexbox styling for alignment */
+.main-train-track .select-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-train-track .select-box {
+    flex: 1;
+}
+
+.main-train-track label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--Dark-Gray);
+}
+
+.main-train-track select,
+.main-train-track button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--Dark-Gray);
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Button styling */
+.main-train-track button {
+    background-color: var(--Dark-Blue);
+    color: white;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .main-train-track .select-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-train-track .select-box {
+        width: 100%;
+    }
+
+}
+
+.main-train-track .train-status-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--White);
+    border: 2px solid var(--Dark-Gray);
+    border-radius: 8px;
+}
+
+/* Train Update Section */
+.main-train-track .train-update {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.main-train-track .train-update__wrap {
+    flex-grow: 1;
+}
+
+.main-train-track .train-update__status {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.main-train-track .train-update__time {
+    font-size: 14px;
+    color: #555;
+}
+
+.main-train-track .disclaimer {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+/* Running Status Section */
+.main-train-track .running-status {
+    margin-top: 20px;
+}
+
+.main-train-track .station-row {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-train-track .station-grid {
+    flex: 2;
+}
+
+.main-train-track .station-info,
+.main-train-track .station-time {
+    flex: 1;
+    text-align: center;
+}
+
+.main-train-track .status-icon {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.main-train-track .status-icon.delay {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.main-train-track .status-icon.on-time {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.main-train-track .station-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Error Message */
+.main-train-track .error-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 6px;
+}
+
+.main-train-track .error-message h2 {
+    color: #d9534f;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.main-train-track .error-message p {
+    font-size: 16px;
+    color: #555;
+}
+
+.main-train-track .home-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.main-train-track .home-link:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .main-train-track .station-info {
+        scale: 0;
+    }
+}
+
+
+
+
 /* Footer for all pages */
 footer {
     width: 100%;
@@ -892,7 +1179,7 @@ footer {
     padding: var(--Medium);
     color: var(--Orange);
     font-size: var(--Small-Text);
-    font-weight: var(--Regular);
+    font-weight: 300;
 }
 
 .footer-links {
@@ -914,11 +1201,15 @@ footer {
 .footer-links button {
     background: none;
     color: var(--Light-Gray);
+    font-weight: 100;
     border: none;
+    border-bottom: 1px solid var(--Orange);
+    margin: 5px;
+    padding: 5px;
     font-size: var(--Body-Text);
     text-align: left;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
 
     &:hover {
         color: var(--Orange);
