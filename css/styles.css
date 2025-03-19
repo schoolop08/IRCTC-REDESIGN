@@ -18,7 +18,9 @@
     /*(for backgrounds and borders)*/
 
     /* Secondary-Color: */
-    --Sky-Blue: #4900b7;
+    --Sky-Blue: #0096b7;
+    --Red: #ff4949;
+    --Green: #49ff49;
     /*(for hover states and secondary buttons)*/
 
     /* Font Weights:  */
@@ -34,6 +36,74 @@
     --Small-Text: 12px;
 }
 
+/* Cursor GSAP */
+.flair {
+    width: 75px;
+    height: 75px;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.flair img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Setup Animation for Landing Page */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--Light-Gray);
+    backdrop-filter: blur(100px);
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 10;
+}
+
+.logo-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+    transition: transform 0.2s ease, opacity 0.8s ease;
+    z-index: 20;
+}
+
+.logo {
+    width: 75px;
+    height: auto;
+}
+
+body.loaded .overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.loaded .logo-wrapper {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 600px) {
+    .flair img {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 800px) {
+    .flair img {
+        width: 50%;
+        height: 50%;
+    }
+}
 
 /* Global Styles */
 * {
@@ -72,7 +142,7 @@ header {
 
 
 header .logo img {
-    height: var(--H1);
+    height: 44px;
 }
 
 .main-nav button {
@@ -548,21 +618,27 @@ header .logo img {
 .main-trains {
     margin: 40px auto 0 auto;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
 }
 
 .main-trains .container {
-    width: 100%;
+    width: 90%;
     margin: 10px 0;
+    max-width: 1000px;
+    border-radius: 20px;
+    border: 2px solid var(--Dark-Gray);
+    background-color: var(--White);
 }
 
 /* Header */
 .main-trains .header {
-    color: var(--Orange);
-    padding: 16px;
+    color: var(--White);
     background-color: var(--Dark-Blue);
-    width: 250px;
-    border-radius: 0px 10px 10px 0px;
+    padding: 16px;
+    border-radius: 18px 18px 0px 0px;
 }
 
 .main-trains .header h1 {
@@ -576,7 +652,6 @@ header .logo img {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    background-color: var(--Light-Gray);
     padding: 30px;
     padding-bottom: 0;
 }
@@ -598,7 +673,7 @@ header .logo img {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--Orange);
+    color: var(--Dark-Blue);
 
     &:hover {
         cursor: pointer;
@@ -612,7 +687,7 @@ header .logo img {
 
 .main-trains .train-item,
 .main-booking .card {
-    background-color: var(--White);
+    background-color: var(--Light-Gray);
     padding: 16px;
     border-radius: 12px;
     margin-bottom: 12px;
@@ -660,6 +735,8 @@ header .logo img {
 
     &#selected {
         background-color: var(--Dark-Blue);
+        scale: 0.95;
+        border: 0;
         color: var(--White);
     }
 }
@@ -669,12 +746,12 @@ header .logo img {
 }
 
 .main-trains .text-red {
-    color: #ff0000;
+    color: var(--Red);
     font-weight: 500;
 }
 
 .main-trains .text-green {
-    color: #1eb910;
+    color: var(--Green);
     font-weight: 500;
 }
 
@@ -685,6 +762,7 @@ header .logo img {
     padding: 16px;
     background-color: var(--Dark-Blue);
     color: var(--White);
+    border-radius: 0px 0px 18px 18px;
 }
 
 .main-trains .footer button {
@@ -737,7 +815,7 @@ header .logo img {
     transition: ease 0.2s;
 
     &:hover {
-        background-color: #0077aa;
+        opacity: 0.75;
     }
 }
 
@@ -807,6 +885,7 @@ header .logo img {
     max-width: 1000px;
     width: 90%;
     border: 1px solid var(--Dark-Gray);
+    background-color: var(--White);
 }
 
 .main-booking .card div {
@@ -864,9 +943,14 @@ header .logo img {
 .main-booking .card .title button {
     padding: 10px 25px;
     border: 0;
+    background-color: var(--Orange);
+    color: var(--White);
+    border-radius: 25px;
+    transition: 0.2s ease;
 
     &:hover {
         cursor: pointer;
+        opacity: 0.75;
         border: 0;
     }
 }
@@ -1065,18 +1149,12 @@ header .logo img {
 .main-train-track .train-update__status {
     font-size: 18px;
     font-weight: 500;
-    color: #333;
+    color: var(--Dark-Blue);
 }
 
 .main-train-track .train-update__time {
     font-size: 14px;
-    color: #555;
-}
-
-.main-train-track .disclaimer {
-    font-size: 12px;
-    color: #999;
-    margin-top: 4px;
+    color: var(--Dark-Gray);
 }
 
 /* Running Status Section */
@@ -1088,7 +1166,7 @@ header .logo img {
     display: flex;
     align-items: center;
     padding: 12px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--Dark-Gray);
 }
 
 .main-train-track .station-grid {
@@ -1110,55 +1188,34 @@ header .logo img {
 }
 
 .main-train-track .status-icon.delay {
-    background-color: #ffebee;
-    color: #d32f2f;
+    background-color: var(--Red);
+    color: var(--Light-Gray);
 }
 
 .main-train-track .status-icon.on-time {
-    background-color: #e8f5e9;
-    color: #388e3c;
+    background-color: var(--Dark-Blue);
+    color: var(--White);
 }
 
 .main-train-track .station-name {
     font-size: 16px;
     font-weight: 500;
-    color: #333;
+    color: var(--Dark-Gray);
+
+    &.active {
+        color: var(--Sky-Blue);
+        animation: infinite alternate blink 0.5s;
+    }
 }
 
-/* Error Message */
-.main-train-track .error-message {
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff3cd;
-    border: 1px solid #ffeeba;
-    border-radius: 6px;
-}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
 
-.main-train-track .error-message h2 {
-    color: #d9534f;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.main-train-track .error-message p {
-    font-size: 16px;
-    color: #555;
-}
-
-.main-train-track .home-link {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.main-train-track .home-link:hover {
-    background-color: #0056b3;
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Responsive Design */

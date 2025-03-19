@@ -8,6 +8,21 @@
   </head>
   <body>
     <div class="main-train-track">
+      <div class="train">
+        <div class="train-num">
+          <h1
+            style="
+              font-size: 30px;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              color: var(--Dark-Blue);
+            "
+          >
+            122816 <span style="font-weight: 500">NANDANKANAN EXP</span>
+          </h1>
+        </div>
+      </div>
       <div class="container">
         <details style="transition: 0.25s ease; cursor: pointer">
           <summary>Modify Info</summary>
@@ -91,7 +106,12 @@
           </div>
           <div class="train-update__wrap">
             <div class="train-update__status">
-              Train departed from <span id="departed-stnCode">Bhadan</span>
+              Train reached
+              <span
+                id="departed-stnCode"
+                style="color: var(--Orange); font-size: 24px; font-weight: 600"
+                >Bhadan</span
+              >
             </div>
             <div class="train-update__time">
               Last Updated: <span>19 Mar 2025 11:00</span>

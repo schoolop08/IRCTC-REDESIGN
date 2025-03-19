@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- landing page -->
+    <!-- Section: Landing Page Main Container -->
     <div class="main-index">
-      <!-- navigation that comes in this specific page -->
+      <!-- Section: Secondary Navigation -->
       <nav class="secondary-nav">
         <a href="#"><button id="active">Trains</button></a>
         <a href="#"><button>Flights</button></a>
@@ -20,15 +20,23 @@
         <a href="#"><button>Loyalty</button></a>
         <a href="#"><button>Promotions</button></a>
       </nav>
+
+      <!-- Section: Main Booking Card -->
       <div class="card">
+        <!-- Section: Booking Header -->
         <div class="header">
           <li><a href="#" id="active">Book Ticket</a></li>
           <li><a href="pages/track-train 1.html">Track Your Train ⬆</a></li>
         </div>
+
+        <!-- Section: Hero Image -->
         <div class="hero-image">
-          <img src="assets/index-bg.png" alt="" />
+          <img src="assets/index-bg.png" alt="Hero Background" />
         </div>
+
+        <!-- Section: Booking Form -->
         <div id="book-form">
+          <!-- Section: Input Group - Source Station -->
           <div class="input-group">
             <img
               src="https://cdn.jsdelivr.net/gh/corover/assets@latest/askdisha-bucket/station-icon.png"
@@ -40,6 +48,7 @@
             </div>
           </div>
 
+          <!-- Section: Swap Button -->
           <div class="swap-btn">
             <img
               src="https://cdn.jsdelivr.net/gh/corover/assets@latest/askdisha-bucket/arrows-refactored.png"
@@ -47,6 +56,7 @@
             />
           </div>
 
+          <!-- Section: Input Group - Destination Station -->
           <div class="input-group">
             <img
               src="https://cdn.jsdelivr.net/gh/corover/assets@latest/askdisha-bucket/station-icon.png"
@@ -61,18 +71,21 @@
             </div>
           </div>
 
+          <!-- Section: Date and Quota Selection -->
           <div class="date-quota-group">
+            <!-- Section: Journey Date Input -->
             <div class="input-group">
               <div>
                 <span class="label">Journey Date</span>
-                <input type="date" name="" id="" />
+                <input type="date" />
               </div>
             </div>
 
+            <!-- Section: Quota Selection -->
             <div class="input-group">
               <div>
-                <span class="label"> Quota</span>
-                <select name="" id="">
+                <span class="label">Quota</span>
+                <select>
                   <option value="#">General</option>
                   <option value="#">General</option>
                   <option value="#">General</option>
@@ -82,18 +95,22 @@
             </div>
           </div>
         </div>
+
+        <!-- Section: Find Trains Button -->
         <button
           class="book-btn"
           onclick="document.location='pages/train-list.html'"
         >
           Find Trains
         </button>
+        <button class="book-btn">AskDisha 2.0</button>
       </div>
 
+      <!-- Section: Other Popular Services -->
       <div class="container">
         <h2 class="title">Our other popular services</h2>
         <div class="services-flex">
-          <!-- Flights -->
+          <!-- Service Card: Flights -->
           <div class="service-card">
             <div class="icon-wrapper">
               <img src="assets/services images/Flight.png" alt="Flights" />
@@ -101,7 +118,7 @@
             <p>Flights</p>
           </div>
 
-          <!-- Hotels -->
+          <!-- Service Card: Hotels -->
           <div class="service-card">
             <div class="icon-wrapper">
               <img src="assets/services images/Hotel.png" alt="Hotels" />
@@ -109,7 +126,7 @@
             <p>Hotels</p>
           </div>
 
-          <!-- Rail Drishti -->
+          <!-- Service Card: Rail Drishti -->
           <div class="service-card">
             <div class="icon-wrapper">
               <img
@@ -120,15 +137,15 @@
             <p>Rail Drishti</p>
           </div>
 
-          <!-- E-catering -->
+          <!-- Service Card: eCatering -->
           <div class="service-card">
             <div class="icon-wrapper">
-              <img src="assets/services images/Catering.png" alt="E-catering" />
+              <img src="assets/services images/Catering.png" alt="eCatering" />
             </div>
             <p>eCatering</p>
           </div>
 
-          <!-- Bus -->
+          <!-- Service Card: Bus -->
           <div class="service-card">
             <div class="icon-wrapper">
               <img src="assets/services images/Bus.png" alt="Bus" />
@@ -136,7 +153,7 @@
             <p>Bus</p>
           </div>
 
-          <!-- Tourist Train -->
+          <!-- Service Card: Tourist Train -->
           <div class="service-card">
             <div class="icon-wrapper">
               <img src="assets/services images/Train.png" alt="Tourist Train" />
@@ -144,7 +161,7 @@
             <p>Tourist Train</p>
           </div>
 
-          <!-- Hill Railways -->
+          <!-- Service Card: Hill Railways -->
           <div class="service-card">
             <div class="icon-wrapper">
               <img
@@ -154,7 +171,8 @@
             </div>
             <p>Hill Railways</p>
           </div>
-          <!-- Holiday Packs -->
+
+          <!-- Service Card: Holiday Packs -->
           <div class="service-card">
             <div class="icon-wrapper">
               <img src="assets/services images/Hotel.png" alt="Holiday Packs" />
@@ -162,7 +180,7 @@
             <p>Holiday Packs</p>
           </div>
 
-          <!-- Charter Train -->
+          <!-- Service Card: Charter Train -->
           <div class="service-card">
             <div class="icon-wrapper">
               <img src="assets/services images/Train.png" alt="Charter Train" />
@@ -171,10 +189,15 @@
           </div>
         </div>
       </div>
+
+      <!-- Section: Holiday Plans Title -->
       <center>
         <h3 class="title">Plan your next holiday</h3>
       </center>
+
+      <!-- Section: Holiday Plans Carousel -->
       <div class="carousel">
+        <!-- Carousel Card: Maharajas' Express -->
         <div class="card">
           <img src="assets/plans/Maharajas.png" alt="Maharajas' Express" />
           <div class="card-content">
@@ -186,6 +209,7 @@
           </div>
         </div>
 
+        <!-- Carousel Card: International Packages -->
         <div class="card">
           <img src="assets/plans/Intl.png" alt="International Packages" />
           <div class="card-content">
@@ -197,8 +221,9 @@
           </div>
         </div>
 
+        <!-- Carousel Card: Domestic Packages -->
         <div class="card">
-          <img src="assets/plans/Domestic.png" alt="Domestic Air Packages" />
+          <img src="assets/plans/Domestic.png" alt="Domestic Packages" />
           <div class="card-content">
             <h3>Domestic Packages</h3>
             <p>
@@ -209,6 +234,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Section: External JavaScript -->
     <script src="js/setup.js"></script>
   </body>
 </html>
