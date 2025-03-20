@@ -36,6 +36,82 @@
     --Small-Text: 12px;
 }
 
+:root.dark-theme {
+    /* Primary Color: */
+    --Dark-Blue: #a9bdef;
+
+    /* Accent Colors: */
+    /* --Orange: #e9bd8b; */
+    /* Slightly warmer orange for visibility */
+
+    --Dark-Gray: #e6e8fa;
+    /* Lighter gray for text on dark background */
+    --Light-Gray: rgb(3, 4, 10);
+    /* Very dark gray for background */
+    --White: #000;
+    /* Off-white for soft contrast */
+
+    /* Secondary-Color: */
+    --Sky-Blue: #892c1a;
+    /* Vibrant blue for emphasis */
+    --Red: #ff4d4d;
+    /* Softer red to reduce eye strain */
+    --Green: #4dff4d;
+    /* Bright green for visibility */
+
+}
+
+/* theme switch */
+.theme {
+    bottom: 10%;
+    right: 10%;
+}
+
+.theme #checkbox {
+    display: none;
+}
+
+.theme .switch {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #003d99b5;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--Dark-Blue);
+    box-shadow: 0px 0px 3px var(--Dark-Blue) inset;
+    transition: 1s;
+}
+
+.theme .switch svg {
+    width: 1.2em;
+}
+
+.theme .switch svg path {
+    fill: var(--Light-Gray);
+}
+
+.theme #checkbox:checked+.switch {
+    box-shadow: 0px 0px 1px var(--Dark-Blue) inset,
+        0px 0px 2px var(--Dark-Blue) inset, 0px 0px 10px var(--Dark-Blue) inset,
+        0px 0px 40px var(--Dark-Blue), 0px 0px 100px var(--Dark-Blue),
+        0px 0px 5px var(--Dark-Blue);
+    border: 2px solid var(--Dark-Gray);
+    background-color: #a9bdef70;
+}
+
+.theme #checkbox:checked+.switch svg {
+    filter: drop-shadow(0px 0px 5px var(--Dark-Blue));
+}
+
+.theme #checkbox:checked+.switch svg path {
+    fill: var(--Light-Gray);
+}
+
 /* Cursor GSAP */
 .flair {
     width: 75px;
@@ -123,6 +199,7 @@ html {
     font-weight: var(--Regular);
     font-style: normal;
     background-color: var(--Light-Gray);
+    color: var(--Dark-Gray);
     margin: 0;
     padding: 0;
     width: 100%;
@@ -155,6 +232,7 @@ header .logo img {
     &:hover {
         cursor: pointer;
         color: var(--Dark-Blue);
+        border: 0 !important;
     }
 
     &:active {
@@ -286,7 +364,7 @@ header .logo img {
     }
 
     &#active {
-        color: var(--Sky-Blue);
+        color: var(--Dark-Blue);
         background-color: var(--White);
     }
 }
@@ -326,16 +404,16 @@ header .logo img {
     border-radius: 10px 10px 0 0;
 
     &#active {
-        color: var(--Orange);
+        color: var(--White);
         background-color: var(--Dark-Blue);
     }
 }
 
 .hero-image img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
-    /* border-radius: var(--Body-Text) var(--Body-Text) 0 0; */
+    border-radius: 0 0 var(--Body-Text) var(--Body-Text);
     transition: 0.3s;
 }
 
@@ -888,6 +966,7 @@ header .logo img {
     width: 90%;
     border: 1px solid var(--Dark-Gray);
     background-color: var(--White);
+    color: var(--Dark-Gray);
 }
 
 .main-booking .card div {
@@ -910,6 +989,7 @@ header .logo img {
 .main-booking .card select {
     border: 0;
     /* margin-bottom: 15px; */
+    background-color: var(--White);
     color: var(--Dark-Blue);
     width: 150px;
     padding-right: 15px;

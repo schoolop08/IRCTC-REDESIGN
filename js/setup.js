@@ -24,7 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
       <img src="/assets/logo.png" alt="Logo" class="logo" />
     </div>
       <header>
-        <div class="logo"><a href="/index.html"><img src="/assets/logo.png" alt="IRCTC LOGO" /></a></div>
+        <div class="logo" style="display:flex; align-items:center; gap:20px "><a href="/index.html"><img src="/assets/logo.png" alt="IRCTC LOGO" /></a><div class="theme">
+          <input id="checkbox" type="checkbox" />
+          <label class="switch" for="checkbox">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="slider"
+            >
+              <path
+                d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"
+              ></path>
+            </svg>
+          </label>
+        </div>
+        </div>
         <nav class="main-nav">
           <a href="#"><button>IRCTC Exclusive</button></a>
           <a href="#"><button>Amazon Daily Deals</button></a>
@@ -38,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
+
       </header>
     `;
 
@@ -164,4 +179,34 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   document.head.appendChild(gsapScript);
+
+  console.log("DOM loaded");
+
+  const checkbox = document.getElementById("checkbox");
+
+  // Load theme from localStorage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark-theme");
+    if (checkbox) checkbox.checked = true;
+  } else {
+    document.documentElement.classList.remove("dark-theme");
+    if (checkbox) checkbox.checked = false;
+  }
+
+  if (checkbox) {
+    console.log("Checkbox found");
+    checkbox.addEventListener("change", () => {
+      console.log("Checkbox toggled");
+      if (checkbox.checked) {
+        document.documentElement.classList.add("dark-theme");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark-theme");
+        localStorage.setItem("theme", "light");
+      }
+    });
+  } else {
+    console.log("Checkbox not found");
+  }
 });
