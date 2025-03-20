@@ -7,7 +7,7 @@
     --Dark-Blue: #003d99;
 
     /* Accent Colors: */
-    --Orange: #FF6B00;
+    --Orange: #ff6a00;
     /*(for buttons and call-to-action elements)*/
 
     --Dark-Gray: #4d4d4d;
@@ -38,7 +38,7 @@
 
 :root.dark-theme {
     /* Primary Color: */
-    --Dark-Blue: #a9bdef;
+    --Dark-Blue: #a9d8ef;
 
     /* Accent Colors: */
     /* --Orange: #e9bd8b; */
@@ -52,7 +52,7 @@
     /* Off-white for soft contrast */
 
     /* Secondary-Color: */
-    --Sky-Blue: #892c1a;
+    --Sky-Blue: #1a895d;
     /* Vibrant blue for emphasis */
     --Red: #ff4d4d;
     /* Softer red to reduce eye strain */
