@@ -1,3 +1,4 @@
+# 🚀 IRCTC Rethought [Frontend Only]
 IRCTC Rethought is a frontend-only redesign of the Indian Railway Catering and Tourism Corporation (IRCTC) website, built for the Front End Frontier hackathon hosted by IIT Patna. This project reimagines the landing page, train booking process, train listings, and more, focusing on modern design, usability, and interactivity - all without a backend, as per the hackathon rules. The aim is to make booking train tickets and exploring services like holiday packages or luxury trains a smoother, more enjoyable experience.
 
 **Live Demo**: [IRCTC - Rethought || The App](https://irctc-rethought.netlify.app/)
